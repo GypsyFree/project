@@ -26,6 +26,7 @@
 						<div style="color:grey;">
 							${historyPostingRecord.user.uName}
 						</div>
+						
 					</div>
 					<div style="margin:4px">
 						<c:set value="${fn:split(historyPostingRecord.content,'内容')}" var="str1" />

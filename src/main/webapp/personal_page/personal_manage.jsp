@@ -299,12 +299,26 @@ function getPhoto(){
 <!-- websocket -->
 <script type="text/javascript">
 window.onload= function   line(){
+	
+
+		var now = new Date();
+
+		var day = ("0" + now.getDate()).slice(-2);
+
+		var month = ("0" + (now.getMonth() + 1)).slice(-2);
+
+		var today = now.getFullYear() + "-" + (month) + "-" + (day);
+
+		$('#age').val(today);
+	
+
 	var userphone = $("#userphone").text();
 
 	if ('WebSocket' in window) {
 		websocket = new WebSocket(
-				"ws://localhost:8080/ssm_grimm/websocket/" + userphone);
-
+				 	 "ws://localhost:8080/ssm_grimm/websocket/" + userphone);  
+	
+				
 	} else {
 		alert('当前浏览器 Not support websocket')
 	}
@@ -513,7 +527,7 @@ label {
 			class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
 		<div
 			class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-			<a class="navbar-brand brand-logo" href="index.html"><img
+			<a class="navbar-brand brand-logo" href="/ssm_grimm/ajax/index.mvc"><img
 				src="../personal_page/images/logo.svg" alt="logo" /></a> <a
 				class="navbar-brand brand-logo-mini" href="index.html"><img
 				src="../personal_page/images/logo-mini.svg" alt="logo" /></a>
@@ -841,19 +855,7 @@ label {
 		<!-- page-body-wrapper ends -->
 	</div>
 	<!-- container-scroller -->
-	<script type="text/javascript">
-	window.onload = function() {
-		var now = new Date();
 
-		var day = ("0" + now.getDate()).slice(-2);
-
-		var month = ("0" + (now.getMonth() + 1)).slice(-2);
-
-		var today = now.getFullYear() + "-" + (month) + "-" + (day);
-
-		$('#age').val(today);
-	}
-</script>
 	
 
 </body>

@@ -1,17 +1,17 @@
 /*
  Navicat Premium Data Transfer
 
- Source Server         : mysql
+ Source Server         : yuyingluntan
  Source Server Type    : MySQL
- Source Server Version : 50719
+ Source Server Version : 80013
  Source Host           : localhost:3306
  Source Schema         : yuying
 
  Target Server Type    : MySQL
- Target Server Version : 50719
+ Target Server Version : 80013
  File Encoding         : 65001
 
- Date: 07/01/2019 09:44:42
+ Date: 07/01/2019 01:34:32
 */
 
 SET NAMES utf8mb4;
@@ -21,21 +21,20 @@ SET FOREIGN_KEY_CHECKS = 0;
 -- Table structure for chatwithpeople
 -- ----------------------------
 DROP TABLE IF EXISTS `chatwithpeople`;
-CREATE TABLE `chatwithpeople` (
-  `SendPhone` varchar(20) NOT NULL,
-  `ReceivePhone` varchar(20) NOT NULL,
-  `Content` longtext,
-  `time` timestamp(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3) ON UPDATE CURRENT_TIMESTAMP(3),
-  PRIMARY KEY (`SendPhone`,`ReceivePhone`,`time`) USING BTREE,
-  KEY `ReceivePhone` (`ReceivePhone`) USING BTREE,
+CREATE TABLE `chatwithpeople`  (
+  `SendPhone` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `ReceivePhone` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `Content` longtext CHARACTER SET utf8 COLLATE utf8_general_ci NULL,
+  `time` timestamp(3) NOT NULL,
+  PRIMARY KEY (`SendPhone`, `ReceivePhone`, `time`) USING BTREE,
+  INDEX `ReceivePhone`(`ReceivePhone`) USING BTREE,
   CONSTRAINT `chatwithpeople_ibfk_1` FOREIGN KEY (`SendPhone`) REFERENCES `userinfo` (`phone`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `chatwithpeople_ibfk_2` FOREIGN KEY (`ReceivePhone`) REFERENCES `userinfo` (`phone`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC;
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of chatwithpeople
 -- ----------------------------
-BEGIN;
 INSERT INTO `chatwithpeople` VALUES ('15964245533', '15964245599', 'rewewewew', '2018-12-29 07:27:53.858');
 INSERT INTO `chatwithpeople` VALUES ('15964245533', '15964245599', 're', '2018-12-29 07:27:56.309');
 INSERT INTO `chatwithpeople` VALUES ('15964245533', '15964245599', 'gf', '2018-12-29 07:27:59.095');
@@ -82,6 +81,8 @@ INSERT INTO `chatwithpeople` VALUES ('15964245533', '15964245599', 'dddddd', '20
 INSERT INTO `chatwithpeople` VALUES ('15964245533', '15964245599', 'dddddd', '2018-12-29 07:45:21.141');
 INSERT INTO `chatwithpeople` VALUES ('15964245533', '15964245599', 'dddddd', '2018-12-29 07:45:21.306');
 INSERT INTO `chatwithpeople` VALUES ('15964245533', '15964245599', 'dddddd', '2018-12-29 07:45:21.448');
+INSERT INTO `chatwithpeople` VALUES ('15964245544', '15964245555', '你好呀\n', '2019-01-06 14:50:21.436');
+INSERT INTO `chatwithpeople` VALUES ('15964245544', '15964245555', '別發啦', '2019-01-06 14:50:38.923');
 INSERT INTO `chatwithpeople` VALUES ('15964245555', '15964245533', '和肉体和风格化风格化', '2018-12-30 14:03:07.027');
 INSERT INTO `chatwithpeople` VALUES ('15964245555', '15964245533', '和肉体和风格化风格化', '2018-12-30 14:03:13.618');
 INSERT INTO `chatwithpeople` VALUES ('15964245555', '15964245533', '和肉体和风格化风格化', '2018-12-30 14:03:13.791');
@@ -97,6 +98,36 @@ INSERT INTO `chatwithpeople` VALUES ('15964245555', '15964245533', 'fgdgdfgwerwr
 INSERT INTO `chatwithpeople` VALUES ('15964245555', '15964245533', 'fgdgdfgwerwrwwerwrrewrwerwe', '2019-01-02 10:21:50.953');
 INSERT INTO `chatwithpeople` VALUES ('15964245555', '15964245533', 'fgdgdfgwerwrwwerwrrewrwerwe', '2019-01-02 10:21:51.124');
 INSERT INTO `chatwithpeople` VALUES ('15964245555', '15964245533', 'fgdgdfgwerwrwwerwrrewrwerwe', '2019-01-02 10:21:51.266');
+INSERT INTO `chatwithpeople` VALUES ('15964245555', '15964245544', 'fdssdfsdfs', '2019-01-06 14:47:45.798');
+INSERT INTO `chatwithpeople` VALUES ('15964245555', '15964245544', 'fdssdfsdfs', '2019-01-06 14:47:45.949');
+INSERT INTO `chatwithpeople` VALUES ('15964245555', '15964245544', 'fdssdfsdfs', '2019-01-06 14:47:46.100');
+INSERT INTO `chatwithpeople` VALUES ('15964245555', '15964245544', 'fdssdfsdfs', '2019-01-06 14:47:46.251');
+INSERT INTO `chatwithpeople` VALUES ('15964245555', '15964245544', 'fdssdfsdfs', '2019-01-06 14:47:46.411');
+INSERT INTO `chatwithpeople` VALUES ('15964245555', '15964245544', 'fdssdfsdfs', '2019-01-06 14:47:46.564');
+INSERT INTO `chatwithpeople` VALUES ('15964245555', '15964245544', 'fdssdfsdfs', '2019-01-06 14:47:46.699');
+INSERT INTO `chatwithpeople` VALUES ('15964245555', '15964245544', 'fdssdfsdfs', '2019-01-06 14:48:19.453');
+INSERT INTO `chatwithpeople` VALUES ('15964245555', '15964245544', 'fdssdfsdfs', '2019-01-06 14:48:19.604');
+INSERT INTO `chatwithpeople` VALUES ('15964245555', '15964245544', 'fdssdfsdfs', '2019-01-06 14:48:19.740');
+INSERT INTO `chatwithpeople` VALUES ('15964245555', '15964245544', 'fdssdfsdfs', '2019-01-06 14:48:19.833');
+INSERT INTO `chatwithpeople` VALUES ('15964245555', '15964245544', 'fdssdfsdfs', '2019-01-06 14:48:19.980');
+INSERT INTO `chatwithpeople` VALUES ('15964245555', '15964245544', 'fdssdfsdfs', '2019-01-06 14:48:20.131');
+INSERT INTO `chatwithpeople` VALUES ('15964245555', '15964245544', 'fdssdfsdfs', '2019-01-06 14:48:40.932');
+INSERT INTO `chatwithpeople` VALUES ('15964245555', '15964245544', 'fdssdfsdfs', '2019-01-06 14:48:41.084');
+INSERT INTO `chatwithpeople` VALUES ('15964245555', '15964245544', 'fdssdfsdfs', '2019-01-06 14:48:41.252');
+INSERT INTO `chatwithpeople` VALUES ('15964245555', '15964245544', 'csfsdf', '2019-01-06 14:50:02.760');
+INSERT INTO `chatwithpeople` VALUES ('15964245555', '15964245544', 'csfsdf', '2019-01-06 14:50:02.928');
+INSERT INTO `chatwithpeople` VALUES ('15964245555', '15964245544', 'csfsdf', '2019-01-06 14:50:03.119');
+INSERT INTO `chatwithpeople` VALUES ('15964245555', '15964245544', 'csfsdf', '2019-01-06 14:50:03.238');
+INSERT INTO `chatwithpeople` VALUES ('15964245555', '15964245544', 'csfsdf', '2019-01-06 14:50:03.383');
+INSERT INTO `chatwithpeople` VALUES ('15964245555', '15964245544', 'csfsdf', '2019-01-06 14:50:30.846');
+INSERT INTO `chatwithpeople` VALUES ('15964245555', '15964245544', 'csfsdf', '2019-01-06 14:50:30.998');
+INSERT INTO `chatwithpeople` VALUES ('15964245555', '15964245544', 'csfsdf', '2019-01-06 14:50:31.245');
+INSERT INTO `chatwithpeople` VALUES ('15964245555', '15964245544', 'csfsdf', '2019-01-06 14:50:31.388');
+INSERT INTO `chatwithpeople` VALUES ('15964245555', '15964245544', 'csfsdf', '2019-01-06 14:50:31.524');
+INSERT INTO `chatwithpeople` VALUES ('15964245555', '15964245544', 'csfsdf', '2019-01-06 14:50:31.660');
+INSERT INTO `chatwithpeople` VALUES ('15964245555', '15964245544', 'csfsdf', '2019-01-06 14:50:31.795');
+INSERT INTO `chatwithpeople` VALUES ('15964245555', '15964245544', 'csfsdf', '2019-01-06 14:50:31.908');
+INSERT INTO `chatwithpeople` VALUES ('15964245555', '15964245544', 'csfsdf', '2019-01-06 14:50:32.052');
 INSERT INTO `chatwithpeople` VALUES ('15964245555', '15964245588', 'asdads', '2019-01-05 07:03:21.810');
 INSERT INTO `chatwithpeople` VALUES ('15964245555', '15964245588', 'asdads', '2019-01-05 07:03:22.690');
 INSERT INTO `chatwithpeople` VALUES ('15964245555', '15964245588', 'asdads', '2019-01-05 07:03:22.843');
@@ -323,100 +354,102 @@ INSERT INTO `chatwithpeople` VALUES ('15964245588', '15964245555', 'fsdf', '2019
 INSERT INTO `chatwithpeople` VALUES ('15964245588', '15964245555', '出租车', '2019-01-06 05:39:36.664');
 INSERT INTO `chatwithpeople` VALUES ('15964245588', '15964245555', '发射点发射点', '2019-01-06 05:39:40.725');
 INSERT INTO `chatwithpeople` VALUES ('15964245588', '15964245555', 'fsdfd', '2019-01-06 07:38:10.436');
-COMMIT;
 
 -- ----------------------------
 -- Table structure for historypostingrecord
 -- ----------------------------
 DROP TABLE IF EXISTS `historypostingrecord`;
-CREATE TABLE `historypostingrecord` (
+CREATE TABLE `historypostingrecord`  (
   `Id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `Phone` varchar(20) DEFAULT NULL,
-  `Content` longtext NOT NULL,
-  `ContentType` tinyint(4) DEFAULT '0',
-  `Time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `Phone` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `Content` longtext CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `ContentType` tinyint(4) NULL DEFAULT 0,
+  `Time` timestamp(0) NOT NULL,
   PRIMARY KEY (`Id`) USING BTREE,
-  KEY `Phone` (`Phone`) USING BTREE,
+  INDEX `Phone`(`Phone`) USING BTREE,
   CONSTRAINT `historypostingrecord_ibfk_1` FOREIGN KEY (`Phone`) REFERENCES `userinfo` (`phone`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 19 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of historypostingrecord
 -- ----------------------------
-BEGIN;
-INSERT INTO `historypostingrecord` VALUES (10, '15964245544', '鸡蛋怎么吃才更营养？内容鸡蛋中含有丰富的蛋白质、维生素、钙、胆固醇等元素，营养丰富的鸡蛋在孕期食谱中扮演了重要的角色，那么鸡蛋要怎么吃才更健康更营养呢？一天两个鸡蛋足够了，请放其它鸡蛋一条生路。生吃鸡蛋是不是更有营养？草鸡蛋比普通鸡蛋更有营养吗？\n\n草鸡蛋和普通鸡蛋的营养相差无几，草鸡蛋也并不比普通鸡蛋更有营养。只不过是散养的鸡吃的都是杂粮、草籽、小虫，所以草鸡蛋的口感可能要比普通鸡蛋好，但如果散养的鸡所处的环境、土壤是被污染的，那么草鸡蛋可能还不如普通鸡蛋呢。所以大家在选择上不必太过纠结。\n\n很多孕妈妈一定听说过生吃鸡蛋更有营养的说法，而实际上食用生鸡蛋不但容易引起细菌感染，还会影响人体对维生素H吸收。从健康和营养角度考虑，孕妈妈一定要食用彻底煮熟的鸡蛋。从营养吸收的角度来讲，煮蛋为100%，炒蛋为97%，嫩炸为98%，老炸为81.1%，开水、牛奶冲蛋为92.5%，所以白煮蛋是最适合孕妈妈的吃法。\n\n什么东西都是适量才好，有营养并不代表着多多益善。孕妈妈每天吃1~2个鸡蛋就可以了，食用过量的鸡蛋会加重肠胃的负担，过量的蛋白质不但不会被人体吸收反而还会影响人体对铁的吸收和利用。鸡蛋是高蛋白食物，吃多了会加重人体负担，蛋黄中还含有胆固醇，吃得太多易引起高血脂、高血压、动脉硬化等疾病。', 0, '2019-01-07 09:21:07');
-INSERT INTO `historypostingrecord` VALUES (11, '15964245544', '想要不生病？多带宝宝做户外活动内容到了这个月龄，大多数宝宝都能够自如地被竖抱和坐得相对稳一些了，家长们可以适当带宝宝进行户外活动，也可以让宝宝和年龄相仿的孩子一起玩。\n\n\n然而，宝宝6个月之后，宝宝从母体带出的抗体不再能够保护宝宝，进入了所谓“生理上的免疫不全期”，很容易患呼吸道疾病，有流涕、咳嗽、发热等症状，而在公共场所被传染的几率也大大增加，那如何能在户外玩得好，又能够不生病？\n\n\n1、选择适宜的时间段出行：春秋上午9:00-10：00，下午14:00-17:00；夏天：上午7:30-9:00，下午13:00-14:00；冬天：上午10:00-12:00，下午：13:00-17:00。这些时间段，日照好，气温相对适宜。当极端天气出现时，如暴雨大雪，要避免带宝宝外出哦！\n\n\n2、雾霾严重，空气质量差的时候，尽量不外出。\n\n\n3、选择有卫生许可、经营资质的游乐场所，注意其中是否清洁、安全。\n\n\n4、避免接触正在患流行病的小孩或大人。当然，宝宝自己正在生病的时候，也要自觉不与其他小伙伴亲密接触哦！\n\n\n5、回家后第一时间洗手，大人先洗干净自己的双手，再仔细为宝宝清洗。涂上洗手液或香皂后，要冲洗干净，无残留。\n\n ', 0, '2019-01-07 09:22:29');
-INSERT INTO `historypostingrecord` VALUES (12, '15964245544', '家庭教育内容宝宝为什么爱打人？\n麻麻们会发现，8、9月-2岁的宝宝爱动手，有时候一个巴掌给了奶奶或者姥姥，而且和小朋友相处中，容易动手打其他小朋友。麻麻们意识到问题的时候，也在严厉制止，却因为方法不当，致使宝宝打人。依恋物是妈妈的代替品？\n妈妈们有没有发现宝宝总是喜欢抱着小枕头或是小娃娃？ 不管是吃饭的时候还是睡觉的时候，总是不肯松手？ 宝宝到底是肿么啦？很多麻麻都百思不得其解。 其实，这就是宝宝恋物。宝宝耍脾气时，请温柔以待\n1岁以上的宝宝可以进行适当的家庭教育啦，因为这时候宝宝已经从小婴儿变成了幼儿，向大宝宝迈进啦！这个阶段的宝宝已经可以明白妈妈的意思，跟你“互动”“交流”起来了。也许宝宝说话还不利索，只会叫。培养饭桌好习惯\n很多爸爸妈妈吃饭习惯都不好，边吃边看电视、看手机、挑食，这些习惯都会传染给宝宝。与宝宝同桌吃饭，有些方面要注意，你中招了没？ 8条应该做：1）1岁左右的宝宝最不能容忍的就是妈妈一边将其双手紧束，一边一勺一勺地喂他。这对宝宝生活能力的培养和自尊心的建立有极大的危害，宝宝常常报以反抗或拒食。\n\n\n2）宝宝并不见得一定是想要自己吃饱饭，他的注意力是在“自己吃”这一过程，如果只是为训练他自己吃饭，不妨先喂饱了他，再由着他去满足学习和尝试的乐趣。\n\n\n3）当宝宝自己吃饭时，要及时给予表扬，即使他把饭吃得乱七八糟，还是应当鼓励他。如果妈妈确实担心宝宝把饭吃得满地都是，可以在宝宝坐着的椅下铺几张报纸，这样一来等他吃完饭后，只要收拾一下弄脏了的报纸就行了。\n\n\n4）1岁的宝宝可以吃成人吃的饭菜了。妈妈做饭时，在准备放盐和其他调料之前，应该把宝宝的那份饭菜留出来。\n\n\n5）给宝宝选择一个自己就餐的座位，最好让他坐在安静不受干扰的固定地方，不玩、不看电视以免吃饭时分散注意力。\n\n\n6）餐桌上，成人谈话的内容最好与宝宝吃饭有关，以吸引他的兴趣，需注意不要过分关注宝宝进食，让宝宝感到不自在。严肃中立对待宝宝打人行为\n\"> 宝宝爱打人该怎么办？ 不要发愁，爸爸妈妈你应该要这样做！ 1、首先检讨生活中，是否大人表现出了动手行为，或者所接触到的影音资料有类似的行为，如果有就需要改正。妈妈限制太多，宝宝将“听不见”。不要踩水哦，会弄湿鞋子，也会滑到的……\n\n\n不要动那个杯子……\n\n\n不要在那里玩……\n\n\n不要踩在凳子上……\n\n\n\n一切都是为了宝宝好，怕他有危险，怕他会得病，怕他不舒服……我们总是不断提醒宝宝。这些提醒很常见，很多也是不自觉的就脱口而出。\n\n\n但宝宝们往往不领情，不让做的事情偏去做，把妈妈的话当做耳旁风，于是妈妈难免心里想：这孩子怎么就不理解我一片苦心呢，这不都是为了你好，真是什么都不懂的熊孩子……', 0, '2019-01-07 09:28:40');
-INSERT INTO `historypostingrecord` VALUES (13, '15964245544', '亲子阅读应该从什么时候开始？内容0-10个月——妈妈碎碎念时期\n\n该阶段以各种亲子互动为主，不需要刻意给宝宝准备阅读内容。主要照看者要用言语的形式表达与宝宝的任何互动，给宝宝指认生活中常用物品，在带宝宝外出时，向宝宝介绍花草树木各类存在物。\n\n\n\n10-18个月——言语发展关键期\n\n宝宝开始出现有意识的言语，从单词句到双词句，给宝宝准备一些卡片类阅读材料，内容主要是认识物品、植物、动物、水果等。色彩鲜艳，图画内容简单，卡片要求圆角，不会割伤宝宝手。一些宝宝喜欢撕书，可以准备一些布书。\n\n\n19-36个月——言语爆发期\n\n宝宝的词汇丰富，言语表达加强，可以给宝宝准备一些小故事，简单故事情节的绘本、故事书和朗朗上口的儿歌都是可以选择的。和宝宝一起进行阅读，最好选择一天固定的时刻。\n\n\n\n3-4岁——想象力发展时期\n\n故事的内容要生动有趣，有寓意、有常识的讲解，这里要强调的是，此时最好不要选择识字、计算的书，而应着重选择情节简单，却能引发孩子丰富想象的故事、童话、儿歌，目的在于让孩子在家长的帮助下体验读书的乐趣，培养对书籍的兴趣。这时候可以和宝宝进行故事角色扮演，吸引宝宝对故事的兴趣。\n\n该阶段的宝宝处于幼儿园时期，可以了解宝宝幼儿园生活，并将一些生活实例编成小故事，讲给宝宝听，并引导宝宝对故事的结尾做不同的想象。\n\n\n\n4-5岁\n\n现在不到4岁的孩子就已经不断提出“为什么”一类问题，家长可以从《儿童百科全书》、《学前十万个为什么》这类书中找出答案，讲给孩子听。处于这一年龄段的孩子，多对童话着迷，家长可以通过讲述童话启发孩子的想象力。此时，开始注重塑造孩子的人格也是十分必要的，父母可以给孩子们读一些历史上著名人物的事迹，从中接受一些建功立业的道理，对孩子的成长和培养高尚情操不无好处。\n\n\n5-6岁\n\n孩子逐渐开始形成自己的兴趣爱好。这时父母要以一个导师的角度来指导孩子自己选购图书。一方面要注意培养保护孩子可贵的兴趣爱好，另一方面也要启发和引导孩子将兴趣投入更多的领域。\n\n\n当一个孩子迷恋汽车时，家长除了可以帮他购买一些汽车玩具、参观汽车展外，也可建议他阅读一些关于汽车外型设计和内部构造的画报，从而引发他对于美术和机械的兴趣。\n\n\n\n当一个孩子热爱绘画时，父母也不妨和他一起将故事书中的人物动作画出来，并用绘画的形式将之发展、续编下去，从而引发他对绘画和文学的兴趣。并可趁机轻松认字。\n\n\n\n宝宝早教不学技能，不学本事，只是锻炼宝宝感官和思维，切忌走入任何误区！', 0, '2019-01-07 09:30:24');
-INSERT INTO `historypostingrecord` VALUES (14, '15964245555', '家庭教育内容宝宝为什么爱打人？\n麻麻们会发现，8、9月-2岁的宝宝爱动手，有时候一个巴掌给了奶奶或者姥姥，而且和小朋友相处中，容易动手打其他小朋友。麻麻们意识到问题的时候，也在严厉制止，却因为方法不当，致使宝宝打人。依恋物是妈妈的代替品？\n妈妈们有没有发现宝宝总是喜欢抱着小枕头或是小娃娃？ 不管是吃饭的时候还是睡觉的时候，总是不肯松手？ 宝宝到底是肿么啦？很多麻麻都百思不得其解。 其实，这就是宝宝恋物。宝宝耍脾气时，请温柔以待\n1岁以上的宝宝可以进行适当的家庭教育啦，因为这时候宝宝已经从小婴儿变成了幼儿，向大宝宝迈进啦！这个阶段的宝宝已经可以明白妈妈的意思，跟你“互动”“交流”起来了。也许宝宝说话还不利索，只会叫。培养饭桌好习惯\n很多爸爸妈妈吃饭习惯都不好，边吃边看电视、看手机、挑食，这些习惯都会传染给宝宝。与宝宝同桌吃饭，有些方面要注意，你中招了没？ 8条应该做：1）1岁左右的宝宝最不能容忍的就是妈妈一边将其双手紧束，一边一勺一勺地喂他。这对宝宝生活能力的培养和自尊心的建立有极大的危害，宝宝常常报以反抗或拒食。\n\n\n2）宝宝并不见得一定是想要自己吃饱饭，他的注意力是在“自己吃”这一过程，如果只是为训练他自己吃饭，不妨先喂饱了他，再由着他去满足学习和尝试的乐趣。\n\n\n3）当宝宝自己吃饭时，要及时给予表扬，即使他把饭吃得乱七八糟，还是应当鼓励他。如果妈妈确实担心宝宝把饭吃得满地都是，可以在宝宝坐着的椅下铺几张报纸，这样一来等他吃完饭后，只要收拾一下弄脏了的报纸就行了。\n\n\n4）1岁的宝宝可以吃成人吃的饭菜了。妈妈做饭时，在准备放盐和其他调料之前，应该把宝宝的那份饭菜留出来。\n\n\n5）给宝宝选择一个自己就餐的座位，最好让他坐在安静不受干扰的固定地方，不玩、不看电视以免吃饭时分散注意力。\n\n\n6）餐桌上，成人谈话的内容最好与宝宝吃饭有关，以吸引他的兴趣，需注意不要过分关注宝宝进食，让宝宝感到不自在。严肃中立对待宝宝打人行为\n\"> 宝宝爱打人该怎么办？ 不要发愁，爸爸妈妈你应该要这样做！ 1、首先检讨生活中，是否大人表现出了动手行为，或者所接触到的影音资料有类似的行为，如果有就需要改正。妈妈限制太多，宝宝将“听不见”。不要踩水哦，会弄湿鞋子，也会滑到的……\n\n\n不要动那个杯子……\n\n\n不要在那里玩……\n\n\n不要踩在凳子上……\n\n\n\n一切都是为了宝宝好，怕他有危险，怕他会得病，怕他不舒服……我们总是不断提醒宝宝。这些提醒很常见，很多也是不自觉的就脱口而出。\n\n\n但宝宝们往往不领情，不让做的事情偏去做，把妈妈的话当做耳旁风，于是妈妈难免心里想：这孩子怎么就不理解我一片苦心呢，这不都是为了你好，真是什么都不懂的熊孩子……', 0, '2019-01-07 09:31:44');
-INSERT INTO `historypostingrecord` VALUES (15, '15964245544', '家庭教育内容宝宝为什么爱打人？\n麻麻们会发现，8、9月-2岁的宝宝爱动手，有时候一个巴掌给了奶奶或者姥姥，而且和小朋友相处中，容易动手打其他小朋友。麻麻们意识到问题的时候，也在严厉制止，却因为方法不当，致使宝宝打人。依恋物是妈妈的代替品？\n妈妈们有没有发现宝宝总是喜欢抱着小枕头或是小娃娃？ 不管是吃饭的时候还是睡觉的时候，总是不肯松手？ 宝宝到底是肿么啦？很多麻麻都百思不得其解。 其实，这就是宝宝恋物。宝宝耍脾气时，请温柔以待\n1岁以上的宝宝可以进行适当的家庭教育啦，因为这时候宝宝已经从小婴儿变成了幼儿，向大宝宝迈进啦！这个阶段的宝宝已经可以明白妈妈的意思，跟你“互动”“交流”起来了。也许宝宝说话还不利索，只会叫。培养饭桌好习惯\n很多爸爸妈妈吃饭习惯都不好，边吃边看电视、看手机、挑食，这些习惯都会传染给宝宝。与宝宝同桌吃饭，有些方面要注意，你中招了没？ 8条应该做：1）1岁左右的宝宝最不能容忍的就是妈妈一边将其双手紧束，一边一勺一勺地喂他。这对宝宝生活能力的培养和自尊心的建立有极大的危害，宝宝常常报以反抗或拒食。\n\n\n2）宝宝并不见得一定是想要自己吃饱饭，他的注意力是在“自己吃”这一过程，如果只是为训练他自己吃饭，不妨先喂饱了他，再由着他去满足学习和尝试的乐趣。\n\n\n3）当宝宝自己吃饭时，要及时给予表扬，即使他把饭吃得乱七八糟，还是应当鼓励他。如果妈妈确实担心宝宝把饭吃得满地都是，可以在宝宝坐着的椅下铺几张报纸，这样一来等他吃完饭后，只要收拾一下弄脏了的报纸就行了。\n\n\n4）1岁的宝宝可以吃成人吃的饭菜了。妈妈做饭时，在准备放盐和其他调料之前，应该把宝宝的那份饭菜留出来。\n\n\n5）给宝宝选择一个自己就餐的座位，最好让他坐在安静不受干扰的固定地方，不玩、不看电视以免吃饭时分散注意力。\n\n\n6）餐桌上，成人谈话的内容最好与宝宝吃饭有关，以吸引他的兴趣，需注意不要过分关注宝宝进食，让宝宝感到不自在。严肃中立对待宝宝打人行为\n\"> 宝宝爱打人该怎么办？ 不要发愁，爸爸妈妈你应该要这样做！ 1、首先检讨生活中，是否大人表现出了动手行为，或者所接触到的影音资料有类似的行为，如果有就需要改正。妈妈限制太多，宝宝将“听不见”。不要踩水哦，会弄湿鞋子，也会滑到的……\n\n\n不要动那个杯子……\n\n\n不要在那里玩……\n\n\n不要踩在凳子上……\n\n\n\n一切都是为了宝宝好，怕他有危险，怕他会得病，怕他不舒服……我们总是不断提醒宝宝。这些提醒很常见，很多也是不自觉的就脱口而出。\n\n\n但宝宝们往往不领情，不让做的事情偏去做，把妈妈的话当做耳旁风，于是妈妈难免心里想：这孩子怎么就不理解我一片苦心呢，这不都是为了你好，真是什么都不懂的熊孩子……', 0, '2019-01-07 09:31:45');
-INSERT INTO `historypostingrecord` VALUES (16, '15964245544', '亲子阅读应该从什么时候开始？内容0-10个月——妈妈碎碎念时期\n\n该阶段以各种亲子互动为主，不需要刻意给宝宝准备阅读内容。主要照看者要用言语的形式表达与宝宝的任何互动，给宝宝指认生活中常用物品，在带宝宝外出时，向宝宝介绍花草树木各类存在物。\n\n\n\n10-18个月——言语发展关键期\n\n宝宝开始出现有意识的言语，从单词句到双词句，给宝宝准备一些卡片类阅读材料，内容主要是认识物品、植物、动物、水果等。色彩鲜艳，图画内容简单，卡片要求圆角，不会割伤宝宝手。一些宝宝喜欢撕书，可以准备一些布书。\n\n\n19-36个月——言语爆发期\n\n宝宝的词汇丰富，言语表达加强，可以给宝宝准备一些小故事，简单故事情节的绘本、故事书和朗朗上口的儿歌都是可以选择的。和宝宝一起进行阅读，最好选择一天固定的时刻。\n\n\n\n3-4岁——想象力发展时期\n\n故事的内容要生动有趣，有寓意、有常识的讲解，这里要强调的是，此时最好不要选择识字、计算的书，而应着重选择情节简单，却能引发孩子丰富想象的故事、童话、儿歌，目的在于让孩子在家长的帮助下体验读书的乐趣，培养对书籍的兴趣。这时候可以和宝宝进行故事角色扮演，吸引宝宝对故事的兴趣。\n\n该阶段的宝宝处于幼儿园时期，可以了解宝宝幼儿园生活，并将一些生活实例编成小故事，讲给宝宝听，并引导宝宝对故事的结尾做不同的想象。\n\n\n\n4-5岁\n\n现在不到4岁的孩子就已经不断提出“为什么”一类问题，家长可以从《儿童百科全书》、《学前十万个为什么》这类书中找出答案，讲给孩子听。处于这一年龄段的孩子，多对童话着迷，家长可以通过讲述童话启发孩子的想象力。此时，开始注重塑造孩子的人格也是十分必要的，父母可以给孩子们读一些历史上著名人物的事迹，从中接受一些建功立业的道理，对孩子的成长和培养高尚情操不无好处。\n\n\n5-6岁\n\n孩子逐渐开始形成自己的兴趣爱好。这时父母要以一个导师的角度来指导孩子自己选购图书。一方面要注意培养保护孩子可贵的兴趣爱好，另一方面也要启发和引导孩子将兴趣投入更多的领域。\n\n\n当一个孩子迷恋汽车时，家长除了可以帮他购买一些汽车玩具、参观汽车展外，也可建议他阅读一些关于汽车外型设计和内部构造的画报，从而引发他对于美术和机械的兴趣。\n\n\n\n当一个孩子热爱绘画时，父母也不妨和他一起将故事书中的人物动作画出来，并用绘画的形式将之发展、续编下去，从而引发他对绘画和文学的兴趣。并可趁机轻松认字。\n\n\n\n宝宝早教不学技能，不学本事，只是锻炼宝宝感官和思维，切忌走入任何误区！', 0, '2019-01-07 09:31:53');
-INSERT INTO `historypostingrecord` VALUES (17, '15964245544', '想要不生病？多带宝宝做户外活动内容到了这个月龄，大多数宝宝都能够自如地被竖抱和坐得相对稳一些了，家长们可以适当带宝宝进行户外活动，也可以让宝宝和年龄相仿的孩子一起玩。\n\n\n然而，宝宝6个月之后，宝宝从母体带出的抗体不再能够保护宝宝，进入了所谓“生理上的免疫不全期”，很容易患呼吸道疾病，有流涕、咳嗽、发热等症状，而在公共场所被传染的几率也大大增加，那如何能在户外玩得好，又能够不生病？\n\n\n1、选择适宜的时间段出行：春秋上午9:00-10：00，下午14:00-17:00；夏天：上午7:30-9:00，下午13:00-14:00；冬天：上午10:00-12:00，下午：13:00-17:00。这些时间段，日照好，气温相对适宜。当极端天气出现时，如暴雨大雪，要避免带宝宝外出哦！\n\n\n2、雾霾严重，空气质量差的时候，尽量不外出。\n\n\n3、选择有卫生许可、经营资质的游乐场所，注意其中是否清洁、安全。\n\n\n4、避免接触正在患流行病的小孩或大人。当然，宝宝自己正在生病的时候，也要自觉不与其他小伙伴亲密接触哦！\n\n\n5、回家后第一时间洗手，大人先洗干净自己的双手，再仔细为宝宝清洗。涂上洗手液或香皂后，要冲洗干净，无残留。\n\n ', 0, '2019-01-07 09:31:57');
-INSERT INTO `historypostingrecord` VALUES (18, '15964245544', '鸡蛋怎么吃才更营养？内容鸡蛋中含有丰富的蛋白质、维生素、钙、胆固醇等元素，营养丰富的鸡蛋在孕期食谱中扮演了重要的角色，那么鸡蛋要怎么吃才更健康更营养呢？一天两个鸡蛋足够了，请放其它鸡蛋一条生路。生吃鸡蛋是不是更有营养？草鸡蛋比普通鸡蛋更有营养吗？\n\n草鸡蛋和普通鸡蛋的营养相差无几，草鸡蛋也并不比普通鸡蛋更有营养。只不过是散养的鸡吃的都是杂粮、草籽、小虫，所以草鸡蛋的口感可能要比普通鸡蛋好，但如果散养的鸡所处的环境、土壤是被污染的，那么草鸡蛋可能还不如普通鸡蛋呢。所以大家在选择上不必太过纠结。\n\n很多孕妈妈一定听说过生吃鸡蛋更有营养的说法，而实际上食用生鸡蛋不但容易引起细菌感染，还会影响人体对维生素H吸收。从健康和营养角度考虑，孕妈妈一定要食用彻底煮熟的鸡蛋。从营养吸收的角度来讲，煮蛋为100%，炒蛋为97%，嫩炸为98%，老炸为81.1%，开水、牛奶冲蛋为92.5%，所以白煮蛋是最适合孕妈妈的吃法。\n\n什么东西都是适量才好，有营养并不代表着多多益善。孕妈妈每天吃1~2个鸡蛋就可以了，食用过量的鸡蛋会加重肠胃的负担，过量的蛋白质不但不会被人体吸收反而还会影响人体对铁的吸收和利用。鸡蛋是高蛋白食物，吃多了会加重人体负担，蛋黄中还含有胆固醇，吃得太多易引起高血脂、高血压、动脉硬化等疾病。', 0, '2019-01-07 09:32:01');
-COMMIT;
+INSERT INTO `historypostingrecord` VALUES (12, '15964245544', '模块v法律是看得见进口的撒娇看到几个安德森可根据卡拉圣诞节噶但是酷酷酷酷酷酷酷酷酷酷酷酷酷酷酷酷酷就打开拉萨啊啊啊啊啊啊啊啊啊啊啊啊啊啊就', 0, '2019-01-04 09:21:14');
+INSERT INTO `historypostingrecord` VALUES (13, '15964245544', 'asfjojkoooooooooooo啊就', 0, '2019-01-04 09:21:17');
+INSERT INTO `historypostingrecord` VALUES (14, '15964245555', '模块v法律是看得见进口的撒娇看到几个安德森可根据卡拉圣诞节噶但是酷酷酷酷酷酷酷酷酷酷酷酷酷酷酷酷酷就打开拉萨啊啊啊啊啊啊啊啊啊啊啊啊啊啊就', 0, '2019-01-04 09:21:19');
+INSERT INTO `historypostingrecord` VALUES (15, '15964245544', '模块v法律是看得见进口的撒娇看到几个安德森可根据卡拉圣诞节噶但是酷酷酷酷酷酷酷酷酷酷酷酷酷酷酷酷酷就打开拉萨啊啊啊啊啊啊啊啊啊啊啊啊啊啊就', 0, '2019-01-04 09:21:22');
+INSERT INTO `historypostingrecord` VALUES (16, '15964245544', '模块v法律是看得见进口的撒娇看到几个安德森可根据卡拉圣诞节噶但是酷酷酷酷酷酷酷酷酷酷酷酷酷酷酷酷酷就打开拉萨啊啊啊啊啊啊啊啊啊啊啊内容啊啊啊就', 0, '2019-01-04 09:21:24');
+INSERT INTO `historypostingrecord` VALUES (17, '15964245544', '模块v法律是看得见进口的撒娇看到几个安德森可根据卡拉圣诞节噶但是酷酷酷酷酷酷酷酷酷酷酷酷酷酷酷酷酷就打开拉萨啊啊啊啊啊啊啊啊啊啊啊啊啊啊就', 0, '2019-01-04 09:21:25');
+INSERT INTO `historypostingrecord` VALUES (18, '15964245544', '模块v法律是看得见进口的撒娇看到几个安德森可根据卡拉圣诞节噶但是酷酷酷酷酷酷酷酷酷酷酷酷酷酷酷酷酷就打开拉萨啊啊啊啊啊啊啊啊啊啊啊啊啊啊就', 0, '2019-01-04 09:21:27');
+INSERT INTO `historypostingrecord` VALUES (23, '15964245533', 'f\'s\'d\'f\'s\'d\'f+發士大夫士大夫', 4, '2019-01-06 15:09:47');
+INSERT INTO `historypostingrecord` VALUES (24, '15964245533', 'f\'s\'d\'f\'s\'d\'f的撒給+發士大夫士大夫 gadget阿達', 4, '2019-01-06 15:10:10');
+INSERT INTO `historypostingrecord` VALUES (25, '15964245533', '幅度薩芬+士大夫大師傅', 3, '2019-01-06 15:10:26');
+INSERT INTO `historypostingrecord` VALUES (26, '15964245533', 's+ss', -1, '2019-01-06 17:19:53');
+INSERT INTO `historypostingrecord` VALUES (27, '15964245533', 'dsad +as ', -1, '2019-01-06 17:20:42');
 
 -- ----------------------------
 -- Table structure for recordsofhistoricalexchanges
 -- ----------------------------
 DROP TABLE IF EXISTS `recordsofhistoricalexchanges`;
-CREATE TABLE `recordsofhistoricalexchanges` (
+CREATE TABLE `recordsofhistoricalexchanges`  (
   `id` bigint(20) NOT NULL,
-  `SendPhone` varchar(20) NOT NULL,
-  `ReceivePhone` varchar(20) NOT NULL,
-  `Content` longtext,
-  `time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  PRIMARY KEY (`SendPhone`,`ReceivePhone`,`time`,`id`) USING BTREE,
-  KEY `recordsofhistoricalexchanges_ibfk_2` (`ReceivePhone`) USING BTREE,
+  `SendPhone` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `ReceivePhone` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `Content` longtext CHARACTER SET utf8 COLLATE utf8_general_ci NULL,
+  `time` timestamp(0) NOT NULL,
+  PRIMARY KEY (`SendPhone`, `ReceivePhone`, `time`, `id`) USING BTREE,
+  INDEX `recordsofhistoricalexchanges_ibfk_2`(`ReceivePhone`) USING BTREE,
   CONSTRAINT `recordsofhistoricalexchanges_ibfk_1` FOREIGN KEY (`SendPhone`) REFERENCES `userinfo` (`phone`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `recordsofhistoricalexchanges_ibfk_2` FOREIGN KEY (`ReceivePhone`) REFERENCES `userinfo` (`phone`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC;
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of recordsofhistoricalexchanges
 -- ----------------------------
-BEGIN;
-INSERT INTO `recordsofhistoricalexchanges` VALUES (10, '15964245533', '15964245544', '????', '2019-01-07 01:33:02');
-INSERT INTO `recordsofhistoricalexchanges` VALUES (10, '15964245533', '15964245544', '????????', '2019-01-07 01:36:53');
-INSERT INTO `recordsofhistoricalexchanges` VALUES (11, '15964245533', '15964245544', '?????', '2019-01-07 01:39:35');
-INSERT INTO `recordsofhistoricalexchanges` VALUES (11, '15964245533', '15964245544', '??????????????', '2019-01-07 01:40:37');
+INSERT INTO `recordsofhistoricalexchanges` VALUES (20, '15964245533', '15964245533', '各地政府g', '2019-01-06 15:10:36');
+INSERT INTO `recordsofhistoricalexchanges` VALUES (22, '15964245533', '15964245533', '的觀點', '2019-01-06 15:28:24');
+INSERT INTO `recordsofhistoricalexchanges` VALUES (23, '15964245533', '15964245533', 'sdsdssd', '2019-01-06 17:19:31');
+INSERT INTO `recordsofhistoricalexchanges` VALUES (16, '15964245533', '15964245544', 'de', '2019-01-06 17:21:03');
 INSERT INTO `recordsofhistoricalexchanges` VALUES (16, '15964245533', '15964245588', 'dfhsjhj内容士大夫', '2019-01-08 09:08:45');
 INSERT INTO `recordsofhistoricalexchanges` VALUES (16, '15964245533', '15964245599', '下周出差', '2019-01-05 09:06:44');
 INSERT INTO `recordsofhistoricalexchanges` VALUES (16, '15964245533', '15964245599', '收到罚单', '2019-01-05 09:08:24');
+INSERT INTO `recordsofhistoricalexchanges` VALUES (16, '15964245544', '15964245544', '房贷首付哈迪斯法国啥地方蝴蝶飞噶苏好的', '2019-01-06 14:22:57');
+INSERT INTO `recordsofhistoricalexchanges` VALUES (16, '15964245544', '15964245544', '你好我是胡歌', '2019-01-06 14:28:26');
+INSERT INTO `recordsofhistoricalexchanges` VALUES (16, '15964245544', '15964245544', '噶是大公司都的感覺哦卡的貧困看', '2019-01-06 14:31:34');
+INSERT INTO `recordsofhistoricalexchanges` VALUES (16, '15964245544', '15964245544', '古典詩歌撒旦給', '2019-01-06 14:31:42');
+INSERT INTO `recordsofhistoricalexchanges` VALUES (16, '15964245544', '15964245544', '胡歌', '2019-01-06 14:31:55');
+INSERT INTO `recordsofhistoricalexchanges` VALUES (16, '15964245544', '15964245544', '打發打發', '2019-01-06 14:40:47');
 INSERT INTO `recordsofhistoricalexchanges` VALUES (16, '15964245588', '15964245588', '啊士大夫十大', '2019-01-05 09:09:30');
 INSERT INTO `recordsofhistoricalexchanges` VALUES (16, '15964245588', '15964245599', '发生的', '2019-01-05 09:10:19');
 INSERT INTO `recordsofhistoricalexchanges` VALUES (16, '15964245588', '15964245599', '发生的', '2019-01-05 09:10:35');
 INSERT INTO `recordsofhistoricalexchanges` VALUES (16, '15964245599', '15964245588', '发士大夫', '2019-01-05 09:10:02');
-COMMIT;
 
 -- ----------------------------
 -- Table structure for userinfo
 -- ----------------------------
 DROP TABLE IF EXISTS `userinfo`;
-CREATE TABLE `userinfo` (
-  `Phone` varchar(60) NOT NULL,
-  `UName` varchar(20) DEFAULT '无名氏哦',
-  `UPwd` varchar(60) NOT NULL,
-  `UGender` varchar(60) DEFAULT '可怕的未知性别',
-  `UPhoto` varchar(200) DEFAULT '默认的地址',
-  `UAge` tinyint(4) DEFAULT '0',
-  `UConnect` varchar(255) DEFAULT NULL,
-  `UState` tinyint(4) DEFAULT '0',
+CREATE TABLE `userinfo`  (
+  `Phone` varchar(60) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `UName` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT '无名氏哦',
+  `UPwd` varchar(60) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `UGender` varchar(60) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT '可怕的未知性别',
+  `UPhoto` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT '默认的地址',
+  `UAge` tinyint(4) NULL DEFAULT 0,
+  `UConnect` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `UState` tinyint(4) NULL DEFAULT 0,
   PRIMARY KEY (`Phone`) USING BTREE,
-  KEY `Phone` (`Phone`) USING BTREE,
-  KEY `Phone_2` (`Phone`) USING BTREE,
-  KEY `Phone_3` (`Phone`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC;
+  INDEX `Phone`(`Phone`) USING BTREE,
+  INDEX `Phone_2`(`Phone`) USING BTREE,
+  INDEX `Phone_3`(`Phone`) USING BTREE
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of userinfo
 -- ----------------------------
-BEGIN;
-INSERT INTO `userinfo` VALUES ('15964245533', '王林', 'llVP/Y+N7l1aECOoRPlAZQ==', '女', '默认的地址', 2, 'PAlqucYzYpSDB/HKyorWfA==', 0);
+INSERT INTO `userinfo` VALUES ('15964245533', '王林', 'UEOcDKNDh8HqA30pdfO+sg==', '男', '默认的地址', 4, 'PAlqucYzYpSDB/HKyorWfA==', 0);
 INSERT INTO `userinfo` VALUES ('15964245544', '王虎', 'llVP/Y+N7l1aECOoRPlAZQ==', '可怕的未知性别', '默认的地址', 0, 'dCzhjZejPFxwi9ok4CKIpA==', 0);
-INSERT INTO `userinfo` VALUES ('15964245555', 'd\'f\'s\'f', 'llVP/Y+N7l1aECOoRPlAZQ==', '可怕的未知性别', '默认的地址', 0, '5xqxFXkKshU1VUOhzhNizw==', 2);
-INSERT INTO `userinfo` VALUES ('15964245566', '王虎', 'llVP/Y+N7l1aECOoRPlAZQ==', '可怕的未知性别', '默认的地址', 0, 'KAsqnrA+2mH4F1pXronGww==', 2);
+INSERT INTO `userinfo` VALUES ('15964245555', 'd\'f\'s\'f', 'llVP/Y+N7l1aECOoRPlAZQ==', '可怕的未知性别', '默认的地址', 0, '5xqxFXkKshU1VUOhzhNizw==', 1);
+INSERT INTO `userinfo` VALUES ('15964245566', '王虎', 'llVP/Y+N7l1aECOoRPlAZQ==', '可怕的未知性别', '默认的地址', 0, 'KAsqnrA+2mH4F1pXronGww==', 1);
 INSERT INTO `userinfo` VALUES ('15964245588', '的撒大', 'llVP/Y+N7l1aECOoRPlAZQ==', '可怕的未知性别', '默认的地址', 0, 'dGe6dRJfBPIz7qal/ndjtw==', 1);
 INSERT INTO `userinfo` VALUES ('15964245599', '水水水水', 'llVP/Y+N7l1aECOoRPlAZQ==', '女', '默认的地址', 0, 'O7Jbku4L42WS8yWrbDKwkA==', 0);
-COMMIT;
 
 SET FOREIGN_KEY_CHECKS = 1;

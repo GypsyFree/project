@@ -53,7 +53,7 @@
 
 
 					<a  href="/ssm_grimm/ajax/turnChat.mvc?whosendu=${hostinf.phone}"><img src="/ssm_grimm/userPhoto/${hostinf.phone}.jpg"    style="width: 30px;height: 30px" onerror="this.src='/ssm_grimm/userPhoto/default.jpg'"> </a>	
-						${hostinf.user.uName} 发表啦！！ <br>一个可爱到爆炸的说说 <br>
+						${hostinf.user.uName} 发表啦！ <br>一个可爱到爆炸的说说 <br>
 						<p onclick="showdetail(${hostinf.id});">
 							<a href="#"> ${hostinf.content}</a>
 						</p>

@@ -69,7 +69,7 @@ public class IndexController {
 		    
 		    String  peopletotal=userServiceImp.queryAlLUser().size()+"";
 			String  reviewnum=historyPostingRecordServiceImp.showAllreviewlist().size()+"";
-			
+			System.out.println("集合集合集合"+reviewnum);
 			//返回热门帖子信息
 			if(usernamefromcookie==null){
 				//返回用户信息
@@ -86,7 +86,12 @@ public class IndexController {
 			}else{
 				 mav.addObject("userdetail", userServiceImp.user_exist_returnUser(usernamefromcookie));
 				 mav.addObject("hotpostlist", historyPostingRecordServiceImp.showHotPosting());
-				 mav.addObject("newhis", historyPostingRecordServiceImp.showAllPosting().subList(0, 3));
+				 try {
+					 mav.addObject("newhis", historyPostingRecordServiceImp.showAllPosting().subList(0, 3));
+				} catch (Exception e) {
+					// TODO: handle exception
+				}
+			
 				 mav.addObject("numtotal", numtotal);
 				 mav.addObject("peopletotal", peopletotal);
 				 mav.addObject("reviewnum", reviewnum);
@@ -108,7 +113,12 @@ public class IndexController {
 			// mav.addObject("userdetail", userServiceImp.user_exist_returnUser(sessioname));
 			 //热门帖子
 			 mav.addObject("hotpostlist", historyPostingRecordServiceImp.showHotPosting());
-			 mav.addObject("newhis", historyPostingRecordServiceImp.showAllPosting().subList(0, 3));
+			 try {
+				 mav.addObject("newhis", historyPostingRecordServiceImp.showAllPosting().subList(0, 3));
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+			
 			 mav.addObject("numtotal", numtotal);
 			 mav.addObject("peopletotal", peopletotal);
 			 mav.addObject("reviewnum", reviewnum);
@@ -143,9 +153,9 @@ public class IndexController {
 			String sessionpassword=(String)request.getSession().getAttribute("userpwd");
 			if(null!=usernamefromcookie){
 				
-				Util.setCookie(request, response, "usernamefromcookie", null);
+				Util.setCookie(request, response, "session_name", null);
 			}if(null!=passwordfromcookie){
-				Util.setCookie(request, response, "passwordfromcookie", null);
+				Util.setCookie(request, response, "session_password", null);
 			}if(null!=sessioname){
 				request.getSession().setAttribute("userphone", null);
 			}if(null!=sessionpassword){

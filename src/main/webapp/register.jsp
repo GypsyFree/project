@@ -45,7 +45,8 @@
 	
 	var name,phone,password,code,repassword;
 	name=document.getElementById("name").value;
-	phone=document.getElementById("phone").value;
+   phone=document.getElementById("phone").value;
+	 
 	password=document.getElementById("password").value;
 	repassword=document.getElementById("repassword").value;
 	
@@ -67,7 +68,7 @@
 	    	  } 
 	    	  }
 
-
+	  $("#phone").attr("readonly","readonly");
 		  
 	   if(password==""){
 		   alert("密码不能为空");

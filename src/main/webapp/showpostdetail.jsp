@@ -59,12 +59,22 @@ function  reviewpeople(dd,phone){
 				window.location.href="/ssm_grimm/ajax/showPostDetail.mvc?postid="+dd;
 				
 			}
+			else{
+				
+				alert("请登录账号！");
+		
+				 setTimeout('window.location.href="/ssm_grimm/ajax/index.mvc"',1000);//5秒后执行
+					    
 			
 			
 
+		}
 		},
-
 		error : function(data) {
+			alert("请登录账号！");
+			
+		 
+		    setTimeout('window.location.href="/ssm_grimm/ajax/index.mvc"',1000);//5秒后执行
 
 		}
 
@@ -96,7 +106,6 @@ function  reviewpeople(dd,phone){
 						<div style="color:grey;">
 							${historyPostingRecord.user.uName}
 						</div>
-						
 					</div>
 					<div style="margin:4px">
 						<c:set value="${fn:split(historyPostingRecord.content,'内容')}" var="str1" />

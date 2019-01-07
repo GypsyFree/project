@@ -8,26 +8,56 @@
 <title>Insert title here</title>
 
 <script src="/ssm_grimm/js/jquery.min.js" type="text/javascript"></script>
-
+	
 	<!-- 时间线-->
 
   <link rel="stylesheet" href="../layui/css/layui.css"  media="all">
   <script language="javascript"> 
     function delcfm(id) { 
         if (!confirm("确认要删除？")) { 
-        	alert("不删"+id);
+        
         	
        /*      window.event.returnValue = false;  */
         
         } else{
-        	alert("删除"+id);
+        
         	//删除标签
+        	 $.ajax({ 
+
+ 			    data:{"id":id
+ 			    },
+ 			
+
+ 			    type:"POST", 
+ 			    async: false,
+
+ 			    dataType: 'json',
+
+ 			    url:"/ssm_grimm/ajax/deletePosting.mvc", 
+ 			    
+
+ 			    success:function(data){ 
+ 				if(data.state==0){
+ 					window.location.href="/ssm_grimm/ajax/showPostingHistory.mvc";
+ 				}
+ 				else{alert("删除失败！请稍后再试");}
+ 				
+ 	               
+ 			    },
+
+ 			     error:function(data){ 
+
+ 			    	    alert("后台故障，请稍等");
+
+ 			    }
+
+ 			    });  
         	
         }
     } 
    
         function showdetail(id) { 
-       window.location.href="../showPostDetail.mvc?postid="+id;
+       window.location.href="../ajax/showPostDetail.mvc?postid="+id;
     } 
 </script>
 
@@ -45,7 +75,7 @@
 				<c:forEach items="${yourPost}" var="hostinf">
 
 					 <li class="layui-timeline-item" id="${hostinf.id}" >
-    <i class="layui-icon layui-timeline-axis" onclick="delcfm(this.id);">&#xe63f;</i>
+    <i class="layui-icon layui-timeline-axis" onclick="delcfm(${hostinf.id});">&#xe63f;</i>
     <div class="layui-timeline-content layui-text">
       <h3 class="layui-timeline-title">${hostinf.time}</h3>
       <p>

@@ -93,9 +93,11 @@
 					  alert("验证码未生成，后台报错");
 					  
 				  }  if(data.state==2){
-					 
+					  
+					  var phone = $("#phone");
 					  var code = $("#phonecode");
 					    code.attr("disabled","disabled");
+					    phone.attr("readonly","readonly");
 					    setTimeout(function(){
 					    	code.css("opacity","0.8");
 					    },1000)
@@ -132,6 +134,77 @@
 	
 	      
 	function commit (){
+		var	phone=document.getElementById("phone").value;
+		
+		var	code=document.getElementById("code").value;
+	
+			 if(phone==""){
+			    	alert("手机号不能为空");
+			    	return ; 
+
+			    }else{
+			    	
+			    	  var reg = /^1[3|4|5|7|8][0-9]{9}$/; //验证规则
+			    	  if(reg.test(phone)==false){
+			    		  alert("手机号格式不正确");
+			    		  return ; 
+			    	  } 
+			    	  }
+
+		
+			
+			   if(code==""){
+				   alert("请输入验证码");
+				   return ; 
+			   }
+			
+			
+		 $.ajax({ 
+
+				    data:{"phone":phone ,
+				  "code":code
+				    },
+				
+
+				    type:"POST", 
+				    async: false,
+
+				    dataType: 'json',
+
+	  url:"ajax/login_by_message.mvc", 
+				    
+
+				    success:function(data){ 
+					  if(data.state==0){
+					
+						 alert("该账号未注册");
+						  
+					  }  if(data.state==1){
+						 
+						  alert("验证码错误");
+						  
+					  }  if(data.state==2){
+						
+						$("#formmima").attr("action", "/ssm_grimm/ajax/changePassword.mvc").submit();	
+						  
+						  
+					  }if(data.state==3){
+						
+						  alert("你的账号已被管理员注销");
+					  }
+
+		               
+				    },
+
+				     error:function(data){ 
+
+				    	    alert("后台故障，请稍等");
+
+				    }
+
+				    });  
+		
+		
 	
 	}
 	
@@ -174,11 +247,11 @@
 					
 
 					<!-- Start Sign In Form -->
-					<form action="#" class="fh5co-form animate-box" data-animate-effect="fadeIn">
+					<form action="" class="fh5co-form animate-box" data-animate-effect="fadeIn" id="formmima" method="post">
 						<h2>重置密码</h2>
 						<div class="form-group">
 							<label for="phone" class="sr-only">手机号</label>
-							<input type="text" class="form-control" id="phone" placeholder="手机号" autocomplete="off">
+							<input type="text" class="form-control" id="phone" placeholder="手机号" autocomplete="off" name="phone">
 						</div>
 						<div class="form-group">
 							<label for="password" class="sr-only">验证码</label>
@@ -187,7 +260,7 @@
 						</div>
 				
 						<div class="form-group">
-							<p>没有账号?<a href="registe.jsp">注册</a></p>
+							<p>没有账号?<a href="/ssm_grimm/register.jsp">注册</a></p>
 						</div>
 						<div class="form-group">
 							<input type="button" value="提交" class="btn btn-primary" onclick="commit();">

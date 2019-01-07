@@ -51,10 +51,12 @@
 
 
 	<select id="getUserInfoByphone" parameterType="java.lang.String"
-		resultMap="user_usertable">select * from userinfo where Phone = #{0}
+		resultMap="user_usertable">select * from userinfo where Phone = #{0} 
+		
 	</select>
 	<select id="getReviewlist" resultMap="reviewListMap">select * from
-		recordsofhistoricalexchanges where id = #{0}
+		recordsofhistoricalexchanges where id = #{0}  order by time 
+		
 	</select>
 
 
@@ -64,7 +66,7 @@
 		select
 		*
 		from historypostingrecord
-		where phone =#{phone}
+		where phone =#{phone} order by time 
 	</select>
 
 	<!-- 根据手机号以及类型区分 -->
@@ -73,7 +75,7 @@
 		select
 		*
 		from historypostingrecord where phone =#{0} and
-		contenttype=#{1}
+		contenttype=#{1} order by time
 	</select>
 
 	<!-- 查看时间段内聊天记录 -->
@@ -84,7 +86,7 @@
 		from
 		historypostingrecord where time &gt;=#{1}and
 		time&lt;#{2} and
-		phone=#{0}
+		phone=#{0} order by time
 	</select>
 
 
@@ -109,12 +111,13 @@
 		resultType="HotPosting">
 		select a.id,a.content,COUNT(b.id) as num from
 		historypostingrecord a,recordsofhistoricalexchanges b where a.id=b.id
-		GROUP BY(b.id)
+		GROUP BY(b.id) order by a.time 
 	</select>
 	<!-- 显示指定id的帖子详情 -->
 	<select id="showPostById" timeout="5" statementType="PREPARED"
 		resultMap="historyPostingRecordResult">
-		select * from historypostingrecord where id=#{0}
+		select * from historypostingrecord where id=#{0} order by time 
+		
 	</select>
 
 
@@ -142,17 +145,24 @@
 	
 	<select id="showAllSelfReviews" timeout="5" statementType="PREPARED"
 		resultMap="recordHistoricalChangesResult">
-		select * from recordsofhistoricalexchanges where sendphone=#{0}
+		select * from recordsofhistoricalexchanges where sendphone=#{0} order by time
 	</select>
 	
 	<select id="showAllPosting" timeout="5" statementType="PREPARED"
-		resultType="HistoryPostingRecord">
-		select * from historypostingrecord
+		resultMap="historyPostingRecordResult">
+		select * from historypostingrecord order by time
 	</select>
 	<!-- 顯示所有評論 -->
 		<select id="showAllreviewlist" timeout="5" statementType="PREPARED"
 		resultType="RecordHistoricalChanges">
-		select * from recordsofhistoricalexchanges
+		select * from recordsofhistoricalexchanges order by time
 	</select>
+ <!-- 插入评论 -->
  
+ 	<!-- 插入數據 -->
+	<insert id="insertrecordHistoricalChanges" parameterType="RecordHistoricalChanges"
+		timeout="5" flushCache="true" statementType="PREPARED">insert into
+		recordsofhistoricalexchanges (id, sendphone,receivephone,content,time)values
+		(#{id}, #{sendPhone}, #{receivePhone},#{Content},#{time})
+	</insert>
 </mapper>  

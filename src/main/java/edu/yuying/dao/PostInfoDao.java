@@ -45,4 +45,6 @@ public interface PostInfoDao {
    public List<RecordHistoricalChanges> showAllSelfReviews(String  fromPhone);
  //显示所有評論
  	 public List<RecordHistoricalChanges>showAllreviewlist();
+ 	 //插入评论
+ 	 int  insertrecordHistoricalChanges(RecordHistoricalChanges recordHistoricalChanges);
 }

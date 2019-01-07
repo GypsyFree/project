@@ -1,3 +1,4 @@
+
 package edu.yuying.controller;
 
 import java.io.UnsupportedEncodingException;
@@ -119,20 +120,28 @@ public class ChatController {
 	    Timestamp endtime = new Timestamp(end.getTime());
 		//查出今天的聊天记录
 	List<ChatWithPeople>	listmessage=  chatServiceImp.showChatHistoryDuringTime(whosendu, starttime, endtime);
-		System.err.println("发送消息"+listmessage.get(0).getContent());
+		//System.err.println("发送消息"+listmessage.get(0).getContent());
 		//
 		 String  usernamefromcookie=Util.searchCookie(request, response, "session_name");
 		//  String  passwordfromcookie= Util.searchCookie(request, response, "session_password");
 		String sessioname=(String)request.getSession().getAttribute("userphone");
 			//String sessionpassword=(String)request.getSession().getAttribute("userpwd");
+		
+		if(null!=usernamefromcookie){whoru=usernamefromcookie;}
+		if(null!=sessioname){whoru=sessioname;}
+		System.out.println(usernamefromcookie+""+sessioname);
 		mav.addObject("whosend", whosendu);
 		mav.addObject("listmessage", listmessage);
-		if(null==usernamefromcookie)whoru=sessioname;
-		if(null==sessioname)whoru=usernamefromcookie;
 		mav.addObject("whoru", whoru);
 		mav.addObject("whosenduname", userServiceImp.user_exist_returnUser(whosendu).getuName());
-		mav.addObject("yourname", userServiceImp.user_exist_returnUser(whoru).getuName());
-       return mav;
+		
+		try {
+			mav.addObject("yourname", userServiceImp.user_exist_returnUser(whoru).getuName());
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+    
+		return mav;
 			
 		
 		
@@ -145,3 +154,5 @@ public class ChatController {
 	
 
 }
+
+

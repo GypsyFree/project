@@ -91,9 +91,15 @@ a {
 				<tr style="display: block; height: 46px; margin-left: 15px;">
 					<td class="td_menu"><a class="a_menu"
 						href="/ssm_grimm/ajax/index.mvc">首页</a></td>
-					<td class="td_menu"><a class="a_menu" href="">帖子中心</a></td>
-					<td class="td_menu"><a class="a_menu" href="/ssm_grimm/publish.jsp">发帖子</a></td>
-					<td class="td_menu"><a class="a_menu" href="">我的帖子</a></td>
+
+					<td class="td_menu"><a class="a_menu" href="/ssm_grimm/ajax/showPostCenter.mvc">帖子中心</a></td>
+							<c:if test="${sessionScope.userphone!=null}">
+				<td class="td_menu"><a class="a_menu" href="/ssm_grimm/publish.jsp">发帖子</a></td>
+					<td class="td_menu"><a class="a_menu" href="/ssm_grimm/ajax/showPostingHistory.mvc">我的帖子</a></td>
+						</td>
+					</c:if>
+					
+
 				</tr>
 			</table>
 		</div>

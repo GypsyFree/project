@@ -98,6 +98,30 @@ public class IndexController {
 			
 		}else{
 			
+			
+			List<HotPosting> hotpostlist=historyPostingRecordServiceImp.showHotPosting();
+			Iterator<HotPosting> iter = null;
+		    String  numtotal=historyPostingRecordServiceImp.showAllPosting().size()+"";
+		    
+		    String  peopletotal=userServiceImp.queryAlLUser().size()+"";
+			String  reviewnum=historyPostingRecordServiceImp.showAllreviewlist().size()+"";
+			// mav.addObject("userdetail", userServiceImp.user_exist_returnUser(sessioname));
+			 //热门帖子
+			 mav.addObject("hotpostlist", historyPostingRecordServiceImp.showHotPosting());
+			 mav.addObject("newhis", historyPostingRecordServiceImp.showAllPosting().subList(0, 3));
+			 mav.addObject("numtotal", numtotal);
+			 mav.addObject("peopletotal", peopletotal);
+			 mav.addObject("reviewnum", reviewnum);
+		//	 mav.addObject("username", userServiceImp.user_exist_returnUser(sessioname).getuName());
+			
+			
+			
+			
+			
+			
+			
+			
+			
 			return mav;
 		}
 		

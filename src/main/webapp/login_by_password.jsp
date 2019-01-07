@@ -154,8 +154,8 @@
 			<div class="row">
 				<div class="col-md-12 text-center">
 					<ul class="menu">
-						<li "><a href="login_by_password.jsp">账户密码登录</a></li>
-						<li class="active"><a href="login_by_message.jsp">短信验证登录</a></li>
+						<li "><a href="/ssm_grimm/login_by_password.jsp">账户密码登录</a></li>
+						<li class="active"><a href="/ssm_grimm/login_by_message.jsp">短信验证登录</a></li>
 						
 					</ul>
 				</div>
@@ -180,7 +180,7 @@
 							<label for="remember"><input type="checkbox" id="remember" checked value="0" >记住本次登录</label>
 						</div>
 						<div class="form-group">
-							<p>没有账号? <a href="register.jsp">注册</a> | <a href="forgot.html">忘记密码？</a></p>
+							<p>没有账号? <a href="register.jsp">注册</a> | <a href="/ssm_grimm/forgetpassword.jsp">忘记密码？</a></p>
 						</div>
 						<div class="form-group">
 							<input type="button" value="登录" class="btn btn-primary" onclick="commit()">

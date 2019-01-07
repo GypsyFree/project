@@ -49,4 +49,7 @@ public HistoryPostingRecord showPostById(int id);
 //显示所有pinglun
    public List<RecordHistoricalChanges> showAllreviewlist();
    
+	//插入评论
+	int  insertrecordHistoricalChanges(RecordHistoricalChanges recordHistoricalChanges);
+   
 }

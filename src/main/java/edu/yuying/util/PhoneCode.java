@@ -38,7 +38,7 @@ String flag=null;
       
         String msg =",您的验证码为" + code + "，请于30分钟内填写。如非本人操作，请忽略本短信。";
 
-       /* try {
+      try {
             //指定模板单发短信；
             SmsSingleSender ssender = new SmsSingleSender(appid, appkey);
             SmsSingleSenderResult result = ssender.send(0, "86", phone,
@@ -55,7 +55,7 @@ String flag=null;
             System.out.println("网络IO错误");
         }
 	
-		return flag;*/
+		
         System.out.println(code);
         request.getSession().setAttribute(namecontent, code);
         

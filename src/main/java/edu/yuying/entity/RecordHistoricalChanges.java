@@ -16,7 +16,7 @@ import java.sql.Timestamp;
  */
 
 public class RecordHistoricalChanges {
-	private   BigInteger id;//在谁的说说下？
+	private   int id;//在谁的说说下？
 	private String sendPhone;
 	private String receivePhone;
     private	String Content;
@@ -34,13 +34,13 @@ public class RecordHistoricalChanges {
 	/**
 	 * @return the id
 	 */
-	public BigInteger getId() {
+	public int getId() {
 		return id;
 	}
 	/**
 	 * @param id the id to set
 	 */
-	public void setId(BigInteger id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 	/**

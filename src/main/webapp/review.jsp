@@ -12,7 +12,7 @@
 </head>
 
 <body>
-<c:import url="template_navigator.jsp"></c:import>
+
 <div id="qq">
 	<p>有什么新鲜事想告诉大家?</p>
 	<div class="message" contenteditable="true"></div>

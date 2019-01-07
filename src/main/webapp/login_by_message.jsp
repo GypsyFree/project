@@ -193,7 +193,7 @@ var	state=0;
 					  
 				  }  if(data.state==2){
 					
-					  alert("登录成功");
+					  window.location.href="/ssm_grimm/ajax/index.mvc";
 				  }if(data.state==3){
 					
 					  alert("你的账号已被管理员注销");
@@ -251,7 +251,7 @@ var	state=0;
 					
 
 					<!-- Start Sign In Form -->
-					<form action="#" class="fh5co-form animate-box" data-animate-effect="fadeIn">
+					<form action="#" class="fh5co-form animate-box" data-animate-effect="fadeIn" >
 						<h2>登录</h2>
 						<div class="form-group">
 							<label for="phone" class="sr-only">手机号</label>
@@ -266,7 +266,7 @@ var	state=0;
 							<label for="remember"><input type="checkbox" id="remember" checked value="0" >记住本次登录</label>
 						</div>
 						<div class="form-group">
-							<p>没有账号?<a href="registe.jsp">注册</a> | <a href="forgot.html">忘记密码?</a></p>
+							<p>没有账号?<a href="/ssm_grimm/register.jsp">注册</a> | <a href="/ssm_grimm/forgetpassword.jsp">忘记密码?</a></p>
 						</div>
 						<div class="form-group">
 							<input type="button" value="登录" class="btn btn-primary" onclick="commit();">

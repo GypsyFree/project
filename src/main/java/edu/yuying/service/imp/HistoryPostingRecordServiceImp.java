@@ -121,4 +121,13 @@ public class HistoryPostingRecordServiceImp implements edu.yuying.service.Histor
 		return postInfoDao.showAllreviewlist();
 	}
 
+	/* (non-Javadoc)
+	 * @see edu.yuying.service.HistoryPostingRecordService#insertrecordHistoricalChanges(edu.yuying.entity.RecordHistoricalChanges)
+	 */
+	@Override
+	public int insertrecordHistoricalChanges(RecordHistoricalChanges recordHistoricalChanges) {
+		// TODO Auto-generated method stub
+		return postInfoDao.insertrecordHistoricalChanges(recordHistoricalChanges);
+	}
+
 }

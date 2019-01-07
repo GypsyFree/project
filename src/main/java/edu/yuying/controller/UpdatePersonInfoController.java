@@ -417,6 +417,51 @@ public class UpdatePersonInfoController {
 	
 		
 		
+	///修改密码
+	@RequestMapping(value = "ajax/changePassword.mvc")
+	public @ResponseBody ModelAndView  changePassword(HttpServletRequest request, HttpServletResponse response)
+			throws IOException {
+		response.setContentType("text/html");
+		ModelAndView mode=new ModelAndView();
+		String phone=request.getParameter("phone");
+		System.out.println("修改吗"+phone);
+		mode.setViewName("/changpassword");
+		request.getSession().setAttribute("passwordphonechange", phone);
+		return mode;
+			
+			
+			
+		}
+	
+///修改密码
+@RequestMapping(value = "ajax/updatepassword.mvc")
+public @ResponseBody Map<String, Object>  updatepassword(HttpServletRequest request, HttpServletResponse response)
+		throws IOException {
+	response.setContentType("text/html");
+	Map<String, Object> map = new HashMap<String, Object>();
+	String password=request.getParameter("pass2");
+	System.out.println("密码"+password);
+	String phone=(String)request.getSession().getAttribute("passwordphonechange");
+	System.out.println(phone);
+	User user=userServiceImp.user_exist_returnUser(phone);
+	try {
+		user.setUpwd(Util.md5(password));
+	} catch (NoSuchAlgorithmException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+   if(userServiceImp.userUpdate(user)){
+	   map.put("state", 0);
+	   return  map;
+   }else{
+	   map.put("state", 1);
+	   return  map;
+   }
+
+	
+		
+	}
+	
 	
 	
 	

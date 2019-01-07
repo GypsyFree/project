@@ -63,12 +63,12 @@ window.onload=function(){
         }
 </style>
 </head>
-<body>
+<body style="text-align: center">
 
 
 
 <div id="timee"></div>
-<div id="progress">
+<div id="progress" style="text-align: center;margin: 20% auto ">
       <span></span>
 </div>
 </body>

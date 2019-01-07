@@ -215,19 +215,6 @@
 	
 	
 
-<script type="text/javascript">
-	window.onload = function() {
-		var now = new Date();
-
-		var day = ("0" + now.getDate()).slice(-2);
-
-		var month = ("0" + (now.getMonth() + 1)).slice(-2);
-
-		var today = now.getFullYear() + "-" + (month) + "-" + (day);
-
-		$('#age').val(today);
-	}
-</script>
 
 
 <!-- 修改按钮 -->
@@ -418,7 +405,7 @@ function sendmessage(){
 	
 	websocket.send("0我是管理员"+text);
 	
-	
+	alert("发送成功！请间隔几分钟发送");
 	
 } 
 	</script>
@@ -785,7 +772,6 @@ label {
 					</div>
 
 
-  ========================================================================================
 
 					<div style="width: 100%; height: 100%; text-align: center; display:none"
 						id="changephone">
@@ -816,18 +802,18 @@ label {
 					</div>
 
 
-================================================================================
+
 
 					<div style="width: 100%; height: 100%; text-align: center; display:none"
 						id="sendmessage">
 					
 						<textarea id="managementmessage" name="managementmessage" style="width:200px; height:100px"></textarea>
-						 
+						<br> 
 						<button value="发送给所有在线的用户" onclick="sendmessage();">发送给所有在线用户</button>
 						
 					</div>
 					
- ========================================================================================
+
 
 					<div style="width: 100%; height: 100%; text-align: center;display:none"
 						id="changephooto">
@@ -855,6 +841,19 @@ label {
 		<!-- page-body-wrapper ends -->
 	</div>
 	<!-- container-scroller -->
+	<script type="text/javascript">
+	window.onload = function() {
+		var now = new Date();
+
+		var day = ("0" + now.getDate()).slice(-2);
+
+		var month = ("0" + (now.getMonth() + 1)).slice(-2);
+
+		var today = now.getFullYear() + "-" + (month) + "-" + (day);
+
+		$('#age').val(today);
+	}
+</script>
 	
 
 </body>

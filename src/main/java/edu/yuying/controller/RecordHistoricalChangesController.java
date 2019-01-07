@@ -69,4 +69,43 @@ public class RecordHistoricalChangesController {
 		  //  mav.addObject("theam", historyPostingRecord.getContent().split("内容")[0]);
 			return  mav;
 			}
+		//插入评论
+		@RequestMapping(value = "ajax/insertReiew.mvc")
+		public @ResponseBody 	Map<String, Object>  insertReiew(HttpServletRequest request, HttpServletResponse response)
+				throws IOException {
+			response.setContentType("text/html");
+			String  fromphone=null;
+			 String  usernamefromcookie=Util.searchCookie(request, response, "session_name");
+		
+			String sessioname=(String)request.getSession().getAttribute("userphone");
+			if(null==usernamefromcookie){
+				fromphone=sessioname;
+			}else{
+				fromphone=usernamefromcookie;
+			}
+			Map<String, Object> map = new HashMap<String, Object>();
+           String id=request.getParameter("id");
+           String content=request.getParameter("content");
+           String tophone=request.getParameter("phone");
+           Timestamp time = new Timestamp(System.currentTimeMillis()); 
+           RecordHistoricalChanges changes=new RecordHistoricalChanges();
+           changes.setContent(content);
+           //changes.setFromuser(userServiceImp.user_exist_returnUser(fromphone));
+           changes.setId(Integer.valueOf(id));
+           changes.setSendPhone(fromphone);
+           changes.setReceivePhone(tophone);
+           changes.setTime(time);
+    int a=  historyPostingRecordServiceImp.insertrecordHistoricalChanges(changes);
+          if(a==1){
+        	  System.err.println("插入评论成功");
+        	  map.put("state", 0);
+        	  return  map;
+          }
+          else{ map.put("state", 1);
+          
+          return  map;}
+			
+			}
+		
+		
 }

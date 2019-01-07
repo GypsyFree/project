@@ -84,7 +84,7 @@ function  reviewpeople(dd,phone){
 	<c:import url="template_navigator.jsp"></c:import>
 	<div style="width:980px;height:40px;margin-left:auto;margin-right:auto;"></div>
 	<div style="width:980px;margin-left:auto;margin-right:auto;"><!-- 本页内容主框 -->
-		<div style="width:643px;border:0.5px solid grey;border-radius: 8px">
+		<div style="width:643px;border:0.5px solid #666;border-radius: 8px">
 			<div style="width:643px;font-size:120%;border-bottom:0.5px solid grey;padding:4px;"> ${theam}</div><!-- 帖子主题 -->
 			<div style="width:643px;margin:4px;item-margin:4px;">
 					<div style="width:643px;"><!--发帖人、时间 -->

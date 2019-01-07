@@ -110,6 +110,8 @@ public class UpdatePersonInfoController {
 	@RequestMapping(value = "ajax/updatePeopleinfo.mvc")
 	public @ResponseBody Map<String, Object> updatePeopleinfo(HttpServletRequest request, HttpServletResponse response)
 			throws IOException {
+		request.setCharacterEncoding("UTF-8");String sr=request.getCharacterEncoding();
+		System.out.println(sr);
 		response.setContentType("text/html");
 		Map<String, Object> map = new HashMap<String, Object>();
 		String phone=request.getParameter("phone");

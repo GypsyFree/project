@@ -58,7 +58,7 @@ a {
 		<div style="width: 980px; height: 80px">
 			<!--头部上框-->
 			<div style="float: left; margin-top: 20px; height: 40px;">
-				<a id="a_designation" href="index.jsp">育婴</a>
+				<a id="a_designation" href="index.mvc">育婴</a>
 				<!--网站名称-->
 			</div>
 			<table style="float: right">

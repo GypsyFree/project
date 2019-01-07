@@ -145,7 +145,7 @@ public class HistoryPostingRecordController {
 	public @ResponseBody  ModelAndView  showAllPosting(HttpServletRequest request,
 			HttpServletResponse response) throws UnsupportedEncodingException, NoSuchAlgorithmException {
 		 ModelAndView  map = new  ModelAndView ();
-	
+		 request.setCharacterEncoding("UTF-8");
 		  List<HistoryPostingRecord> HistoryPostingRecord=historyPostingRecordServiceImp.showAllPosting();
 		//request.setAttribute("yourPost", HistoryPostingRecord);
 		map.addObject("allPost", HistoryPostingRecord);

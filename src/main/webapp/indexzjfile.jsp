@@ -318,14 +318,14 @@ td {
 					<li>
 						<p>一共评论</p>
 						<p>
-							<span id="#">${reviewnum}</span>次
+							<span id="#">${peopletotal}</span>次
 						</p>
 					</li>
 
 					<li>
-						<p>论坛共有</p>
+						<p>你有</p>
 						<p>
-							<span id="#">${peopletotal}</span>名用户
+							<span id="#">${reviewnum}</span>个论坛好友
 						</p>
 					</li>
 

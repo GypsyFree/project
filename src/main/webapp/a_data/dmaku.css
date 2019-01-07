@@ -6,7 +6,7 @@
  * 																*
 ****************************************************************/
 *{margin:0px; padding:0px;}
-body{background:#ccc}
+body{background:#f5ffcd}
 #qq{width:600px;/*宽*/height:170px;/*高*/background:#fff;/*背景颜色*/
 margin:50px auto 30px; border-radius:5px;/*Html5 圆角*/}
 #qq p{font-size:12px; color:#666; font-family:"微软雅黑";

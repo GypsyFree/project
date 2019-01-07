@@ -131,6 +131,7 @@ public class HistoryPostingRecordController {
 		response.setContentType("text/html");
 		//ModelAndView mav = new ModelAndView();
 		//Map<String, Object> map = new HashMap<String, Object>();
+		request.setCharacterEncoding("UTF-8");
 		String id=request.getParameter("postid");
 	     HistoryPostingRecord historyPostingRecord=	historyPostingRecordServiceImp.showPostById(Integer.valueOf(id));
 		// System.out.println(historyPostingRecord.getReviewList().get(0).getFromuser().getuName());
@@ -158,7 +159,7 @@ public class HistoryPostingRecordController {
 	public @ResponseBody  ModelAndView  showPostCenter(HttpServletRequest request,
 			HttpServletResponse response) throws UnsupportedEncodingException, NoSuchAlgorithmException {
 		 ModelAndView  map = new  ModelAndView ();
-	
+		 request.setCharacterEncoding("UTF-8");
 		
 			
 				

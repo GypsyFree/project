@@ -74,6 +74,7 @@ public class RecordHistoricalChangesController {
 		public @ResponseBody 	Map<String, Object>  insertReiew(HttpServletRequest request, HttpServletResponse response)
 				throws IOException {
 			response.setContentType("text/html");
+			
 			String  fromphone=null;
 			 String  usernamefromcookie=Util.searchCookie(request, response, "session_name");
 		
@@ -84,6 +85,7 @@ public class RecordHistoricalChangesController {
 				fromphone=usernamefromcookie;
 			}
 			Map<String, Object> map = new HashMap<String, Object>();
+			request.setCharacterEncoding("UTF-8");
            String id=request.getParameter("id");
            String content=request.getParameter("content");
            String tophone=request.getParameter("phone");

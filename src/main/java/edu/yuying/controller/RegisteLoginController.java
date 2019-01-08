@@ -155,7 +155,7 @@ public class RegisteLoginController {
 		Map<String, Object> map = new HashMap<String, Object>();
 		String phone = request.getParameter("phone");
 	    String pwd = request.getParameter("password");
-	System.out.println("登陆密码"+pwd);
+	    System.out.println("登陆密码"+pwd);
 		String state=request.getParameter("state");
 		if(!userServiceImp.user_exist(phone)){
 			//该账户尚未注册

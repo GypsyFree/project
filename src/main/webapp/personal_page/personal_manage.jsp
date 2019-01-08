@@ -316,7 +316,7 @@ window.onload= function   line(){
 
 	if ('WebSocket' in window) {
 		websocket = new WebSocket(
-				 	 "ws://localhost:8080/ssm_grimm/websocket/" + userphone);  
+				"ws://localhost:8080/ssm_grimm/websocket/" + userphone); 	
 	
 				
 	} else {

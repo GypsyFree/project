@@ -1,29 +1,23 @@
-ï»¿/****************************************************************
- *																*		
- * 						      ä»£ç åº“							*
- *                        www.dmaku.com							*
- *       		  åŠªåŠ›åˆ›å»ºå®Œå–„ã€æŒç»­æ›´æ–°æ’ä»¶ä»¥åŠæ¨¡æ¿			*
- * 																*
-****************************************************************/
+
 *{margin:0px; padding:0px;}
-body{background:#f5ffcd}
-#qq{width:600px;/*å®½*/height:170px;/*é«˜*/background:#fff;/*èƒŒæ™¯é¢œè‰²*/
-margin:50px auto 30px; border-radius:5px;/*Html5 åœ†è§’*/}
-#qq p{font-size:12px; color:#666; font-family:"å¾®è½¯é›…é»‘";
+body{background:#f0f0f0}
+#qq{width:600px;/*¿í*/height:170px;/*¸ß*/background:#fff;/*±³¾°ÑÕÉ«*/
+margin:50px auto 30px; border-radius:5px;/*Html5 Ô²½Ç*/}
+#qq p{font-size:12px; color:#666; font-family:"Î¢ÈíÑÅºÚ";
 line-height:45px; text-indent:20px;}
 #qq .message{width:560px; height:70px;margin:0px auto; outline:none;
-border:1px solid #ddd; /*ç²—ç»† é£æ ¼ é¢œè‰²*/}
-#qq .But{width:560px;height:35px;margin:15px auto 0px; position:relative;/*ç›¸å¯¹ï¼Œå‚è€ƒå¯¹è±¡*/}
-#qq .But img.bq{float:left;/*å·¦æµ®åŠ¨*/}
-#qq .But span.submit{width:80px;height:30px; background:#ff8140;					display:block; float:right;/*å³æµ®åŠ¨*/								line-height:30px;border-radius:5px;								cursor:pointer;/*æ‰‹æŒ‡*/color:#fff;font-size:12px;					text-align:center;font-family:"å¾®è½¯é›…é»‘";}
+border:1px solid #ddd; /*´ÖÏ¸ ·ç¸ñ ÑÕÉ«*/}
+#qq .But{width:560px;height:35px;margin:15px auto 0px; position:relative;/*Ïà¶Ô£¬²Î¿¼¶ÔÏó*/}
+#qq .But img.bq{float:left;/*×ó¸¡¶¯*/}
+#qq .But span.submit{width:80px;height:30px; background:#ff8140;					display:block; float:right;/*ÓÒ¸¡¶¯*/								line-height:30px;border-radius:5px;								cursor:pointer;/*ÊÖÖ¸*/color:#fff;font-size:12px;					text-align:center;font-family:"Î¢ÈíÑÅºÚ";}
 
 /*face begin*/
 #qq .But .face{width:390px; height:160px; background:#fff; padding:10px;
 border:1px solid #ddd; box-shadow:2px 2px 3px #666;
-position:absolute;/*ç»å¯¹å®šä½*/ top:21px; left:15px;
-display:none;/*éšè—*/}
+position:absolute;/*¾ø¶Ô¶¨Î»*/ top:21px; left:15px;
+display:none;/*Òş²Ø*/}
 #qq .But .face ul li{width:22px;height:22px; 
-list-style-type:none;/*å»æ‰åœ†ç‚¹*/ float:left;
+list-style-type:none;/*È¥µôÔ²µã*/ float:left;
 margin:2px; cursor:pointer;}
 
 /*msgCon begin*/
@@ -33,5 +27,5 @@ padding:10px; margin-top:20px;}
 .msgCon .msgBox dl{height:60px; border-bottom:1px dotted #ddd;}
 .msgCon .msgBox dl dt{width:50px; height:50px;float:left;}
 .msgCon .msgBox dl dt img{border-radius:25px;}
-.msgCon .msgBox dl dd{width:500px; height:50px;  line-height:50px;float:right; font-size:16px;font-family:"å¾®è½¯é›…é»‘";}
+.msgCon .msgBox dl dd{width:500px; height:50px;  line-height:50px;float:right; font-size:16px;font-family:"Î¢ÈíÑÅºÚ";}
 .msgCon .msgBox .msgTxt{font-size:12px; color:#666; line-height:25px;}

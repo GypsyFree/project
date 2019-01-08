@@ -228,24 +228,24 @@ td {
 
 
 
+<div style="height: 15px; margin-top: 30px; display: block;">
 
-
-<div id="banner_tabs" class="flexslider" style="margin-left:184px;width:600px;float:left">
+<div id="banner_tabs" class="flexslider" style="margin-left:184px;width:600px;height:352px;float:left">
 
 	<ul class="slides">
 		<li>
 			<a title="" target="_blank" href="#">
-				<img width="1920" height="482" alt="" style="background: url(/ssm_grimm/images/banner1.jpg) no-repeat center;" src="/ssm_grimm/images/alpha.png">
+				<img width="1920" height="100%" alt=""  style="background: url(/ssm_grimm/images/m1.jpg) no-repeat center;" src="/ssm_grimm/images/alpha.png">
 			</a>
 		</li>
 		<li>
 			<a title="" href="#">
-				<img width="1920" height="482" alt="" style="background: url(/ssm_grimm/images/banner2.jpg) no-repeat center;" src="/ssm_grimm/images/alpha.png">
+				<img width="1920"  height="100%" alt="" style="background: url(/ssm_grimm/images/m2.jpg) no-repeat center;" src="/ssm_grimm/images/alpha.png">
 			</a>
 		</li>
 		<li>
 			<a title="" href="#">
-				<img width="1920" height="482" alt="" style="background: url(/ssm_grimm/images/banner3.jpg) no-repeat center;" src="/ssm_grimm/images/alpha.png">
+				<img width="1920" height="100%"  alt="" style="background: url(/ssm_grimm/images/m3.jpg) no-repeat center;" src="/ssm_grimm/images/alpha.png">
 			</a>
 		</li>
 	</ul>
@@ -260,18 +260,16 @@ td {
 	</ol>
 </div>
 
-<div  style="width:400px; background-color:yellow;height:464px;margin: 18px auto 20px 10px; float:left; ">
+<div  style="width:400px; background-color:#efefef;height:334px;margin: 18px auto 20px 10px; float:left; ">
 
-<div
-			style="background-color: #efefef; width: auto; text-align: center; height: 80px">
-			<h1 style="font-weight: inherit; color: #adadad; padding-top: 20px">——最新资讯——</h1>
+<div  style=" width: auto; text-align: center; height: 80px;background-color:">
+			<div style="background-color: white;"><h1 style="font-weight: inherit; color: #adadad; padding-top: 20px">——最新资讯——</h1></div>
 			
-					<table class="table table-striped table-bordered table-hover"
-			border-bottom="10px" id="dataTables-example"
-			style="width: 100%; height: 100%; line-height: 50px;">
+			<table class="table table-striped table-bordered table-hover" border-bottom="10px" id="dataTables-example"
+			style="width: 100%; height: 100%; line-height: 50px;background-color:#efefef">
 		   <br>
 		      <br>
-			<tbody style="font-weight: inherit; text-align: center;">
+			<tbody style="font-weight: inherit; text-align: center;" >
 
 				<c:forEach items="${newhis}" var="newhiss">
 
@@ -291,14 +289,14 @@ td {
 
 			</tbody>
 		</table>
-
+   
 		</div>
 
 </div>
 
 
 
-
+</div>
 
 	<!--中间显示项目总数-->
 	<div class="middle"
@@ -323,9 +321,9 @@ td {
 					</li>
 
 					<li>
-						<p>论坛共有</p>
+						<p>你有</p>
 						<p>
-							<span id="#">${peopletotal}</span>名用户
+							<span id="#">${peopletotal}</span>个论坛好友
 						</p>
 					</li>
 
